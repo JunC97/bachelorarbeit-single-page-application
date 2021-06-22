@@ -36,3 +36,162 @@
     transform: rotate(360deg);
   }
 }
+
+/* GENERAL */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item1 { grid-area: notes; }
+.item2 { grid-area: saved; }
+
+.center2 {
+  display: grid;
+  grid-template-areas:
+    'saved saved notes notes notes notes notes notes'
+    'saved saved notes notes notes notes notes notes'
+    'saved saved notes notes notes notes notes notes';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.createNote { grid-area: createNote; }
+.myNotes { grid-area: myNotes; }
+.info { grid-area: info; }
+.about { grid-area: about; }
+.gettingStarted { grid-area: gettingStarted; }
+.contact { grid-area: contact; }
+
+.tiles {
+  display: grid;
+  grid-template-areas:
+    'createNote createNote myNotes myNotes info info '
+    'createNote createNote myNotes myNotes info info '
+    'createNote createNote myNotes myNotes info info ';
+  grid-gap: 20px;
+  padding: 20px;
+  margin: auto;
+  width: 75%;
+}
+
+.tiles2 {
+  display: grid;
+  grid-template-areas:
+    'about about gettingStarted gettingStarted contact contact '
+    'about about gettingStarted gettingStarted contact contact '
+    'about about gettingStarted gettingStarted contact contact ';
+  grid-gap: 20px;
+  padding: 20px;
+  margin: auto;
+  width: 75%;
+}
+
+.tile {
+  height: 100%;
+  /*width: 280px;*/
+  background-color: #F8EFBA;
+  text-align: center;
+  transition: .2s;
+}
+
+.tile:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.tile > h1 {
+  margin-top: 1rem;
+  color: #1B9CFC;
+}
+
+.tile > p {
+  color: #2C3A47;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.link-important {
+  text-decoration: none;
+  color: #fefefe;
+  padding: .5rem;
+  border-radius: 4px;;
+  background: #FEA47F;
+  font-size: 15px;
+  transition: .2s;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-container-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin: 0 .3rem 0 .3rem;
+  width: auto;
+  padding: .6rem;
+  transition: .5s;
+  border-radius: 5px;
+}
+
+.flex-container-inner > a:hover {
+  background-color: #0984e3;
+}
+
+/* NAVIGATION */
+
+.nav {
+  background-color: #74b9ff;
+}
+
+.title {
+  color: #fff;
+  margin: 0 1rem 0 1rem;
+}
+
+/* WELCOME */
+.welcome {
+  margin-bottom: 5rem;
+  /*background-color: #ffeaa7;*/
+}
+
+/* Homepage Tiles */
+
+.link-important:hover {
+  /*transform: scale(1.1);*/
+  background-color: #F97F51;
+}
+
+/* NOTES */
+#textArea {
+  width: 80%;
+  height: 300px;
+  border: 3px solid #25CCF7;
+  border-radius: 10px;
+  color: #555;
+  padding: 5px;
+  margin-top: 0;
+  background-color: #F8EFBA;
+  font-family: Tahoma, sans-serif;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  resize: none;
+}
+
+#create_note_title {
+  padding: 0;
+  margin-bottom: 0;
+  color: #1B9CFC;
+}
