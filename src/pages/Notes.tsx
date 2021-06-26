@@ -11,13 +11,17 @@ class Notes extends Component<NotesProps> {
         //const { title, subtitle, children } = this.props;
         return (
             <>
-                <div className={'center2'}>
-                    <div className={'item1'}>
-                        <h1 id={'create_note_title'}>Take some notes:</h1>
-                        <textarea name="comment" id={'textArea'}>Enter text here...</textarea>
-                    </div>
-                    <div className={'item2'}>
-                        <p>TEST</p>
+                <div className={'center3'}>
+                    <div className={'noteBox'}>
+                        <div className={'notesWrapper'}>
+                            <h1 id={'create_note_title'}>Take some notes</h1>
+                            <textarea name="comment" id={'textArea'} placeholder={'Enter text here'}>
+
+                            </textarea>
+                        </div>
+                        <div className={'item2'}>
+                            <p>NOTES</p>
+                        </div>
                     </div>
                 </div>
             </>

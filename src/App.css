@@ -55,10 +55,11 @@
     'saved saved notes notes notes notes notes notes';
   grid-gap: 10px;
   padding: 10px;
+  width: 80%;
 }
 
 .createNote { grid-area: createNote; }
-.myNotes { grid-area: myNotes; }
+.myNotes { grid-area: myNotes; color: #333 }
 .info { grid-area: info; }
 .about { grid-area: about; }
 .gettingStarted { grid-area: gettingStarted; }
@@ -67,10 +68,10 @@
 .tiles {
   display: grid;
   grid-template-areas:
-    'createNote createNote myNotes myNotes info info '
-    'createNote createNote myNotes myNotes info info '
-    'createNote createNote myNotes myNotes info info ';
-  grid-gap: 20px;
+    'createNote createNote myNotes myNotes'
+    'info info about about'
+    'gettingStarted gettingStarted contact contact';
+  grid-gap: 35px;
   padding: 20px;
   margin: auto;
   width: 75%;
@@ -79,26 +80,42 @@
 .tiles2 {
   display: grid;
   grid-template-areas:
-    'about about gettingStarted gettingStarted contact contact '
-    'about about gettingStarted gettingStarted contact contact '
-    'about about gettingStarted gettingStarted contact contact ';
-  grid-gap: 20px;
+    ' gettingStarted gettingStarted contact contact '
+    ' gettingStarted gettingStarted contact contact '
+    ' gettingStarted gettingStarted contact contact ';
+  grid-gap: 10px;
   padding: 20px;
-  margin: auto;
   width: 75%;
 }
 
 .tile {
   height: 100%;
-  /*width: 280px;*/
-  background-color: #F8EFBA;
+  margin: auto;
+  padding: 5px;
+  background-color: #fff;
+
   text-align: center;
   transition: .2s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tile > div {
+  overflow: hidden;
+}
+
+.tileLink {
+  color: #000;
+}
+.tileLink:hover {
+  cursor: pointer;
+  color: white;
 }
 
 .tile:hover {
   cursor: pointer;
-  transform: scale(1.05);
+  background-color: #1B9CFC;
+  color: white;
+  //transform: scale(1.05);
 }
 
 .tile > h1 {
@@ -175,23 +192,41 @@ a {
 }
 
 /* NOTES */
+
+.noteBox {
+  width: 80%;
+  padding: 10px;
+  margin: 2rem auto;
+
+}
+
+.notesWrapper {
+  margin: auto;
+}
+
 #textArea {
+
   width: 80%;
   height: 300px;
-  border: 3px solid #25CCF7;
-  border-radius: 10px;
-  color: #555;
+  color: #aaa;
   padding: 5px;
-  margin-top: 0;
-  background-color: #F8EFBA;
+  margin: auto;
+  background-color: #fff;
   font-family: Tahoma, sans-serif;
-  background-position: bottom right;
-  background-repeat: no-repeat;
   resize: none;
+  border-radius: 10px;
+  outline-color: white;
+  border: 1px solid #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 #create_note_title {
-  padding: 0;
-  margin-bottom: 0;
+  background-color: #fff;
+  box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 10px, rgb(255, 156, 85) 0px 0px 0px 2px, rgb(255, 85, 85) 0px 0px 0px 12px;
+  padding: 2px;
+  border-radius: 10px;
+  text-align: center;
   color: #1B9CFC;
+  width: 30%;
+  font-size: 25px;
 }

@@ -20,37 +20,70 @@ class Homepage extends Component<HomepageProps> {
 
                 <div className={'center tiles'}>
                     <div className={'createNote tile'}>
+                        <div>
+                            <Link to="/notes" className={'tileLink'}>
                         <h1>Create Note</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorum facilis ipsa
                             ipsam mollitia nobis nulla possimus quia sequi? Nihil?</p>
+                            </Link>
+                        </div>
                     </div>
                     <div className={'myNotes tile'}>
-                        <h1>My Notes</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid, amet dolorum
-                            ducimus esse maxime nam quisquam quo repudiandae!</p>
+                        <div>
+                            <Link to="/notes" className={'tileLink'}>
+                                <h1>My Notes</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid, amet
+                                    dolorum
+                                    ducimus esse maxime nam quisquam quo repudiandae!</p>
+                            </Link>
+                        </div>
                     </div>
                     <div className={'info tile'}>
-                        <h1>Info</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus excepturi harum labore
-                            minima non officia quod vero! Consequatur, debitis nesciunt.</p>
+                        <div>
+                            <Link to="/notes" className={'tileLink'}>
+                                <h1>Info</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus excepturi harum
+                                    labore
+                                    minima non officia quod vero! Consequatur, debitis nesciunt.</p>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className={'about tile'}>
+                        <div>
+                            <Link to="/notes" className={'tileLink'}>
+                                <h1>About</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cum dolore
+                                    eaque
+                                    itaque
+                                    molestias nemo praesentium quae quidem quis voluptates.</p>
+                            </Link>
+                        </div>
+                    </div>
+                    <div className={'gettingStarted tile'}>
+                        <Link to="/notes" className={'tileLink'}>
+                        <div>
+
+                                <h1>Getting Started</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur debitis
+                                    nobis
+                                    unde. Aliquid assumenda autem deserunt enim saepe! Error.</p>
+
+                        </div>
+                        </Link>
+                    </div>
+                    <div className={'contact tile'}>
+                        <div>
+                            <Link to="/notes" className={'tileLink'}>
+                                <h1>Contact</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus eius enim,
+                                    expedita ipsa libero molestiae necessitatibus obcaecati sint vitae!</p>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div className={'center tiles2'}>
-                    <div className={'about tile'}>
-                        <h1>About</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cum dolore eaque itaque
-                            molestias nemo praesentium quae quidem quis voluptates.</p>
-                    </div>
-                    <div className={'gettingStarted tile'}>
-                        <h1>Getting Started</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur debitis nobis
-                            unde. Aliquid assumenda autem deserunt enim saepe! Error.</p>
-                    </div>
-                    <div className={'contact tile'}>
-                        <h1>Contact</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus eius enim,
-                            expedita ipsa libero molestiae necessitatibus obcaecati sint vitae!</p>
-                    </div>
+
+
                 </div>
             </>
         );
