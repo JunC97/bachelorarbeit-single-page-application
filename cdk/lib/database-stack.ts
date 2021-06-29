@@ -32,10 +32,11 @@ export class DatabaseStack extends cdk.Stack {
     
     //Aurora PostgreSQL 10.14 for Aurora Serverless v1 DB clusters
     log.info('Create Aurora Serverless Cluster');
-    const serverlessCluster = new rds.ServerlessCluster(this, 'DatabaaseClusterServerless', {
+    const serverlessCluster = new rds.ServerlessCluster(this, 'DatabaseClusterServerless', {
       engine: rds.DatabaseClusterEngine.auroraPostgres({ version: rds.AuroraPostgresEngineVersion.VER_10_14 }),
       credentials: rds.Credentials.fromGeneratedSecret('clusteradmin'),
       defaultDatabaseName: 'bachelorarbeit_aurora_serverless_database',
+      enableDataApi: true,
       storageEncryptionKey: clusterKey,
       vpc: vpc,
       deletionProtection: false,

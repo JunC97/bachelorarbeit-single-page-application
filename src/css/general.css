@@ -1,0 +1,70 @@
+.main-wrapper {
+
+}
+
+.main-wrapper > Route > Footer {
+
+}
+
+.main {
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.item1 { grid-area: notes; }
+.item2 { grid-area: saved; }
+
+.center2 {
+    display: grid;
+    grid-template-areas:
+    'saved saved notes notes notes notes notes notes'
+    'saved saved notes notes notes notes notes notes'
+    'saved saved notes notes notes notes notes notes';
+    grid-gap: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+.link-important {
+    text-decoration: none;
+    color: #fefefe;
+    padding: .5rem;
+    border-radius: 4px;;
+    background: #FEA47F;
+    font-size: 15px;
+    transition: .2s;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-container-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1rem;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    margin: 0 .3rem 0 .3rem;
+    width: auto;
+    padding: .6rem;
+    transition: .2s;
+    border-radius: 5px;
+}
+
+.flex-container-inner > a:hover {
+    background-color: #fff;
+    color: #1B9CFC;
+}
