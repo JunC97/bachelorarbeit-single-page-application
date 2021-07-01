@@ -7,6 +7,19 @@ interface HomepageProps {
 }
 
 class Homepage extends Component<HomepageProps> {
+    state = {
+        loading: true,
+        person: null
+    }
+    //FETCH DATA HERE
+    //MAKE SURE ONLY FETCHED ONCE WITH COMPONENTDIDMOUNT
+    async componentDidMount() {
+        const url = "https://api.randomuser.me/";
+        const response = await fetch(url);
+        const data = await response.json();
+        //update person in state + set loading to false to show data
+        this.setState({person: data.results[0], loading: false})
+    }
     render() {
         //const { title, subtitle, children } = this.props;
         return (
@@ -41,9 +54,11 @@ class Homepage extends Component<HomepageProps> {
                             <div className={'tile'}>
 
                                 <h1>My Notes</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid, amet
-                                    dolorum
-                                    ducimus esse maxime nam quisquam quo repudiandae!</p>
+                                {this.state.loading ? (
+                                    <p>loading...</p>
+                                    ) : (
+                                        <p>{this.state.person.name.first}</p>
+                                )}
                             </div>
                         </Link>
                         <Link to="/notes" className={'tileLink'}>
