@@ -1,0 +1,112 @@
+/* NOTES */
+
+.noteBox {
+    width: 100%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.notesWrapper {
+    /*margin: auto;*/
+    width: 50%;
+    margin-left: 5rem;
+}
+
+#textArea {
+    width: 96%;
+    height: 300px;
+    color: #000;
+    padding: 1rem;
+    /*margin: auto;*/
+    background-color: #fff;
+    font-family: Tahoma, sans-serif;
+    resize: none;
+    border-radius: 10px;
+    outline-color: white;
+    border: 1px solid #fff;
+    /*box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;*/
+    box-shadow: rgb(204, 219, 232) 1px 1px 6px 3px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+#create_note_title {
+    background-color: #fff;
+    /*box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 10px, rgb(255, 156, 85) 0px 0px 0px 2px, rgb(255, 85, 85) 0px 0px 0px 12px;*/
+    /*box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;*/
+    text-align: left;
+    padding: 2px;
+    border-radius: 10px;
+    color: #1B9CFC;
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 0.3rem;
+}
+
+.savedNotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*align-items: center;*/
+    width: 25%;
+    margin-right: 3rem;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.textfield_btns_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.savedNotesRefreshBtn {
+    align-self: center;
+    border: none;
+}
+
+.textfield_btn:first-child{
+    background-color: #e74c3c;
+}
+.textfield_btn:nth-child(2),
+.refreshBtn{
+    background-color: #1B9CFC;
+}
+.textfield_btn:first-child:hover,
+.textfield_btn:nth-child(2):hover,
+.refreshBtn:hover{
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.textfield_btn:first-child:hover {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.textfield_btn:nth-child(2):hover{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.refreshBtn:hover{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+.textfield_btn {
+    /*margin-left: 1rem;*/
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.refreshBtn{
+    /*margin-left: 1rem;*/
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
