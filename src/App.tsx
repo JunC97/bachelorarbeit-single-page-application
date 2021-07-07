@@ -13,6 +13,8 @@ import Navigation from "./pages/Navigation";
 import FooterBar from "./pages/FooterBar";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
+const apiUrl = "https://ayj4r2rfcc.execute-api.eu-west-1.amazonaws.com/dev"
+
 function App() {
   return (
     <div>
@@ -22,8 +24,8 @@ function App() {
             </header>
             <div className={'main'}>
                 <Switch>
-                    <Route exact path="/" component={Homepage} />
-                    <Route exact path="/notes" component={Notes} />
+                    <Route exact path="/" component={() => <Homepage apiUrl={apiUrl} />}/>
+                    <Route exact path="/notes" component={() => <Notes apiUrl={apiUrl} />} />
                 </Switch>
             </div>
             <footer>

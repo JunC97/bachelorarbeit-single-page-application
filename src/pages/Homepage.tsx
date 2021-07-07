@@ -2,24 +2,30 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 interface HomepageProps {
-    title: string;
-    subtitle?: string;
+    //title?: string
+    // subtitle?: string;
+     apiUrl: string;
 }
 
 class Homepage extends Component<HomepageProps> {
     state = {
         loading: true,
-        person: null
+        title: "",
+        notes: "",
+        date: ""
     }
+
     //FETCH DATA HERE
     //MAKE SURE ONLY FETCHED ONCE WITH COMPONENTDIDMOUNT
     async componentDidMount() {
-        const url = "https://api.randomuser.me/";
+        const url = this.props.apiUrl + "/notes/find/most_recent";
         const response = await fetch(url);
         const data = await response.json();
         //update person in state + set loading to false to show data
-        this.setState({person: data.results[0], loading: false})
+        this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false})
+        console.log(data.notes[0].id)
     }
+
     render() {
         //const { title, subtitle, children } = this.props;
         return (
@@ -55,9 +61,14 @@ class Homepage extends Component<HomepageProps> {
 
                                 <h1>My Notes</h1>
                                 {this.state.loading ? (
+                                    <p>Fetching your most recent note...</p>
+                                ) : (
+                                    <p>Most Recently Created:</p>
+                                )}
+                                {this.state.loading ? (
                                     <p>loading...</p>
                                     ) : (
-                                        <p>{this.state.person.name.first}</p>
+                                        <p>{this.state.title}</p>
                                 )}
                             </div>
                         </Link>

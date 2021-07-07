@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
 interface NotesProps {
-    title: string;
-    content: string;
-    date: string;
-    author: string;
+    apiUrl: string
+    // title?: string;
+    // content?: string;
+    // date?: string;
+    // author?: string;
 }
 
 class Notes extends Component<NotesProps> {
@@ -12,32 +13,34 @@ class Notes extends Component<NotesProps> {
     //STATE TO CHECK FOR LOADING
     state = {
         loading: true,
-        person: null
+        title: "",
+        notes: "",
+        date: ""
     }
 
     deleteInputState = {
         delete: false
     }
 
-    //FETCH DATA HERE
-    //MAKE SURE ONLY FETCHED ONCE WITH COMPONENTDIDMOUNT
-    // async componentDidMount() {
-    //     const url = "https://api.randomuser.me/";
-    //     const response = await fetch(url);
-    //     const data = await response.json();
-    //     //update person in state + set loading to false to show data
-    //     this.setState({person: data.results[0], loading: false})
-    // }
+    async componentDidMount() {
+        const url = this.props.apiUrl + "/notes/find";
+        const response = await fetch(url);
+        const data = await response.json();
+        //update person in state + set loading to false to show data
+        this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false})
+        console.log(data.notes[0].id)
+    }
 
 
     render() {
         //const { title, subtitle, children } = this.props;
         const reloadNotes = async () => {
-            const url = "https://api.randomuser.me/";
+            const url = this.props.apiUrl + "/notes/find";
             const response = await fetch(url);
             const data = await response.json();
             //update person in state + set loading to false to show data
-            this.setState({person: data.results[0], loading: false})
+            this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false})
+            console.log(data.notes[0].id)
         }
         // @ts-ignore
         return (
@@ -61,15 +64,14 @@ class Notes extends Component<NotesProps> {
                         <div className={'savedNotes'}>
                             <div>
                                 <p>NOTES</p>
-                                {this.state.loading || !this.state.person ? (
+                                {this.state.loading ? (
                                     <div>Loading...</div>
                                 ) : (
                                     <div>
                                         <div>
-                                            {this.state.person.name.first} <br/>
-                                            {this.state.person.name.last}
+                                            {this.state.title} <br/>
+                                            {this.state.notes}
                                         </div>
-                                        <img src={this.state.person.picture.large} alt=""/>
                                     </div>
                                 )}
                             </div>
