@@ -1,21 +1,36 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { BachelorArbeitStack } from '../lib/bachelor-arbeit-stack';
+import { UtilsStack } from '../lib/utils-stack';
+import { ApiGatewayStack } from '../lib/api-gateway-stack';
+import { FrontendStack } from '../lib/frontend-stack';
+import { DatabaseStack } from '../lib/database-stack';
+import { LogicStack } from '../lib/logic-stack';
 
 const app = new cdk.App();
-new BachelorArbeitStack(app, 'BachelorArbeitStack', {
-  /* If you don't specify 'env', this stack will be environment-agnostic.
-   * Account/Region-dependent features and context lookups will not work,
-   * but a single synthesized template can be deployed anywhere. */
+const frontendStack = new FrontendStack(app, 'FrontendStack',{
+    stackName: "bachelorarbeit-frontend-stack",
+});
 
-  /* Uncomment the next line to specialize this stack for the AWS Account
-   * and Region that are implied by the current CLI configuration. */
-  // env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
+const databaseStack = new DatabaseStack(app, 'DatabaseStack', {
+    stackName: "bachelorarbeit-database-stack",
+});
 
-  /* Uncomment the next line if you know exactly what Account and Region you
-   * want to deploy the stack to. */
-  // env: { account: '123456789012', region: 'us-east-1' },
+const utilsStack = new UtilsStack(app, 'UtilsStack', {
+    stackName: "bachelorarbeit-utils-stack",
+})
 
-  /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
+const logicStack = new LogicStack(app, 'LogicStack', {
+    stackName: "bachelorarbeit-logic-stack",
+    vpc: databaseStack.Vpc,
+    serverlessClusterArn: databaseStack.ServerlessClusterArn,
+    dBCredentialsSecretArn: databaseStack.dBCredentialsSecretArn,
+    lambda_code_bucket_arn: utilsStack.lambda_code_bucket_arn,
+})
+logicStack.addDependency(utilsStack);
+
+new ApiGatewayStack(app, 'ApiGatewayStack',{
+    stackName: "bachelorarbeit-api-gateway-stack",
+    functionArn: logicStack.functionArn,
+    DatabaseAPILambda: logicStack.DatabaseAPILambda,
 });
