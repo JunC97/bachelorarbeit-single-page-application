@@ -33,4 +33,5 @@ new ApiGatewayStack(app, 'ApiGatewayStack',{
     stackName: "bachelorarbeit-api-gateway-stack",
     functionArn: logicStack.functionArn,
     DatabaseAPILambda: logicStack.DatabaseAPILambda,
+    
 });
