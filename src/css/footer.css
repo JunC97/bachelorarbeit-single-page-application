@@ -5,10 +5,18 @@
 
 .footer{
     margin-top: 1.2rem;
-    height: 5rem;
+    height: fit-content;
 }
 .footer > p,
 .footer > h1 {
     margin: 0;
     padding: 0;
+}
+
+.footerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+    align-items: center;
 }

@@ -32,7 +32,7 @@ class Homepage extends Component<HomepageProps> {
             <>
                 <div className={'flex-container-row'}>
                     <div className={'welcome-box-left'}>
-                        <p>asdasd</p>
+                        <p></p>
                     </div>
                     <div className={'center welcome'}>
                         <h1>Welcome to NotiTiger</h1>
@@ -41,7 +41,7 @@ class Homepage extends Component<HomepageProps> {
                         <Link to="/notes" className={'link-important'}>Create Note</Link>
                     </div>
                     <div className={'welcome-box-right'}>
-                        <p>asdasd</p>
+                        <p></p>
                     </div>
                 </div>
                 <div className={'center'}>
@@ -50,9 +50,7 @@ class Homepage extends Component<HomepageProps> {
                             <div className={'tile'}>
 
                                 <h1>Create Note</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus dolorum facilis
-                                    ipsa
-                                    ipsam mollitia nobis nulla possimus quia sequi? Nihil?</p>
+                                <p>Afraid of forgetting something important? Don't worry we got you covered! Add a new note now!</p>
 
                             </div>
                         </Link>
@@ -75,20 +73,15 @@ class Homepage extends Component<HomepageProps> {
                         <Link to="/notes" className={'tileLink'}>
                             <div className={'tile'}>
                                 <h1>Info</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus excepturi harum
-                                    labore
-                                    minima non officia quod vero! Consequatur, debitis nesciunt.</p>
+                                <p>NotiTiger is a Single-Page-Application that provides note taking capabilities for everyone anywhere.</p>
                             </div>
                         </Link>
                     </div>
                     <div className={'flex-container-row'}>
-                        <Link to="/notes" className={'tileLink'}>
+                        <Link to="/about" className={'tileLink'}>
                             <div className={'tile'}>
                                 <h1>About</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, cum dolore
-                                    eaque
-                                    itaque
-                                    molestias nemo praesentium quae quidem quis voluptates.</p>
+                                <p>Check our about section. Follow this tile!</p>
 
                             </div>
                         </Link>
@@ -96,18 +89,13 @@ class Homepage extends Component<HomepageProps> {
                             <div className={'tile'}>
 
                                 <h1>Getting Started</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur
-                                    debitis
-                                    nobis
-                                    unde. Aliquid assumenda autem deserunt enim saepe! Error.</p>
+                                <p>Click this tile to create your first note! It is simple... just type in what you want to safe an done!</p>
                             </div>
                         </Link>
-                        <Link to="/notes" className={'tileLink'}>
+                        <Link to="/contact" className={'tileLink'}>
                             <div className={'tile'}>
                                 <h1>Contact</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur delectus eius
-                                    enim,
-                                    expedita ipsa libero molestiae necessitatibus obcaecati sint vitae!</p>
+                                <p>Contact us now! Click this tile to talk to us. We are happy to help you or receive feedback!</p>
                             </div>
                         </Link>
                     </div>

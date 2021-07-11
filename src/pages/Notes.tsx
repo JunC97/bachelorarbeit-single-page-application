@@ -15,7 +15,8 @@ class Notes extends Component<NotesProps> {
         loading: true,
         title: "",
         notes: "",
-        date: ""
+        date: "",
+        allNotes: []
     }
 
     deleteInputState = {
@@ -27,8 +28,9 @@ class Notes extends Component<NotesProps> {
         const response = await fetch(url);
         const data = await response.json();
         //update person in state + set loading to false to show data
-        this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false})
+        this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false,  allNotes: data.notes})
         console.log(data.notes[0].id)
+        console.log(this.state.allNotes)
     }
 
 
@@ -39,8 +41,33 @@ class Notes extends Component<NotesProps> {
             const response = await fetch(url);
             const data = await response.json();
             //update person in state + set loading to false to show data
-            this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false})
-            console.log(data.notes[0].id)
+            this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false,  allNotes: data.notes})
+            console.log(data)
+            console.log(this.state.allNotes)
+        }
+
+        const showAllNotes = () =>
+            Array.isArray(this.state.allNotes) ? this.state.allNotes.map((note) => {
+                return(
+                    <div className={'noteDiv'}>
+                        <div className={'noteTop'}>
+                            <h4>Note {note['id']}</h4>
+                            <p>{note['title']}</p>
+                        </div>
+                        <div className={'noteBody'}>
+                            {note['note']}
+                        </div>
+                    </div>
+                )
+            }): null;
+
+        const createNote = async () => {
+            const url = this.props.apiUrl + "/notes/create?title=Test123&notes=Lorem Ipsum 234876129";
+            const response = await fetch(url);
+            //const data = await response.json();
+            //update person in state + set loading to false to show data
+            //this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false})
+            //console.log(data.notes[0].id)
         }
         // @ts-ignore
         return (
@@ -56,22 +83,19 @@ class Notes extends Component<NotesProps> {
                                 <button className={'textfield_btn'}>
                                     Cancel
                                 </button>
-                                <button className={'textfield_btn'}>
+                                <button className={'textfield_btn'} onClick={createNote}>
                                     Save
                                 </button>
                             </div>
                         </div>
                         <div className={'savedNotes'}>
                             <div>
-                                <p>NOTES</p>
+                                <h2>NOTES</h2>
                                 {this.state.loading ? (
                                     <div>Loading...</div>
                                 ) : (
-                                    <div>
-                                        <div>
-                                            {this.state.title} <br/>
-                                            {this.state.notes}
-                                        </div>
+                                    <div className={'noteDiv-wrapper'}>
+                                        {showAllNotes()}
                                     </div>
                                 )}
                             </div>

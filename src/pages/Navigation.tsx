@@ -16,9 +16,10 @@ class Navigation extends Component<NavigationProps> {
                             <Link to="/"><h2>NotiTiger</h2></Link>
                         </div>
                         <div className='flex-container-inner'>
-                                <Link to="/">Start</Link>
-                                <Link to="/notes">Notizen</Link>
-                                <Link to="#">Kontakt</Link>
+                                <Link to="/">Home</Link>
+                                <Link to="/notes">Notes</Link>
+                                <Link to="/contact">Contact</Link>
+                                <Link to="/about">About</Link>
                         </div>
                     </div>
                 </nav>

@@ -53,8 +53,69 @@
     margin-right: 3rem;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    //box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
+
+.noteTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #61dafb;
+}
+
+.noteTop > p {
+    margin: 0;
+    padding-left: 1.7rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.noteBody {
+    /*font-family: Corbel, serif;*/
+    padding: 5px;
+    /*color: dodgerblue;*/
+    color: white;
+    /*background-color: lightyellow;*/
+    background-color: #61dafb;
+}
+
+.savedNotes > div > h2 {
+    color: #1B9CFC;
+    border-bottom: 1px solid #e74c3c;
+}
+
+.noteDiv-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.noteDiv {
+    //display: flex;
+    //flex-direction: row;
+    border-radius: 5px !important;
+    //width: 100%;
+    margin: 12px 5px;
+    box-shadow: rgba(100, 100, 100, 0.45) 0px 25px 20px -20px;
+}
+
+.noteDiv:hover {
+    cursor: pointer;
+}
+
+.noteDiv > .noteTop > h4 {
+    margin: 0;
+    background-color: #efefef;
+    color: #333;
+    width: fit-content;
+    padding: 3px;
+    border-bottom-right-radius: 5px;
+}
+
+.savedNotes{
+    background-color: #fff;
+}
+
 
 .textfield_btns_wrapper {
     display: flex;

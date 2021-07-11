@@ -9,6 +9,8 @@ import './css/footer.css';
 
 import Homepage from './pages/Homepage'
 import Notes from "./pages/Notes";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Navigation from "./pages/Navigation";
 import FooterBar from "./pages/FooterBar";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
@@ -26,6 +28,8 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={() => <Homepage apiUrl={apiUrl} />}/>
                     <Route exact path="/notes" component={() => <Notes apiUrl={apiUrl} />} />
+                    <Route exact path="/about" component={() => <About apiUrl={apiUrl} />} />
+                    <Route exact path="/contact" component={() => <Contact apiUrl={apiUrl} />} />
                 </Switch>
             </div>
             <footer>

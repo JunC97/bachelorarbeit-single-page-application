@@ -11,7 +11,14 @@ class FooterBar extends Component<FooterBarProps> {
         return (
             <>
                 <nav className={'footer'}>
-                    TEST
+                    <div className={'footerDiv'}>
+                        <Link to="/">
+                            <h2>NotiTiger</h2>
+                        </Link>
+                        <ul>
+                        </ul>
+                        <p>All Rights Reserved | &copy; NotiTiger</p>
+                    </div>
                 </nav>
             </>
         );
