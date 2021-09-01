@@ -7,7 +7,6 @@ interface NavigationProps {
 
 class Navigation extends Component<NavigationProps> {
     render() {
-        //const { title, subtitle, children } = this.props;
         return (
             <>
                 <nav className={'nav'}>
