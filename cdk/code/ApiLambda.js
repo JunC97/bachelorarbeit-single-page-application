@@ -58,19 +58,6 @@ exports.handler = async (event, context) => {
             console.log("SUCCESS! Following query was successfully sent and executed: " + sqlStatement + ". Called API: " + path)
             return response
 
-
-            //const response = {
-            //statusCode: 200,
-            //headers: {
-            //    "Access-Control-Allow-Origin" : "*",
-            //    "Access-Control-Allow-Credentials" : true
-            //},
-            //body: "SUCCESS! Following query was successfully sent and executed: " + sqlStatement + ". Called API: " + path,
-            //};
-            //return response
-        
-
-
     } catch (err) {
         console.log(err)
         return err
