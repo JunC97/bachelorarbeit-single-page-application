@@ -56,8 +56,6 @@
     margin-top: 1.2rem;
     margin-bottom: 2rem;
     box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
-    /*box-shadow: rgba(0, 0, 0, 0.25) 0 px 0.0625 em 0.0625 em, rgba(0, 0, 0, 0.25) 0 px 0.125 em 0.5 em, rgba(255, 255, 255, 0.1) 0 px 0 px 0 px 1 px inset;*/
-    /*background-color: #ffeaa7;*/
 }
 
 .welcome > h1,
@@ -76,11 +74,8 @@
     margin-top: 1.2rem;
     width: 20vw;
     margin-bottom: 2rem;
-    /*box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;*/
-    /*box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;*/
 }
 
 .link-important:hover {
-    /*transform: scale(1.1);*/
     background-color: #1B9CFC;
 }
