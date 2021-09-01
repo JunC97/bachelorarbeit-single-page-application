@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 interface ContactProps {
-    //title?: string
-    // subtitle?: string;
     apiUrl: string;
 }
 
@@ -27,7 +25,6 @@ class Contact extends Component<ContactProps> {
     }
 
     render() {
-        //const { title, subtitle, children } = this.props;
         return (
             <>
                 <div className={'flex-container-row'}>
