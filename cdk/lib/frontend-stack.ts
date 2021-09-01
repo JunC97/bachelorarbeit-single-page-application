@@ -38,11 +38,7 @@ export class FrontendStack extends cdk.Stack {
     new s3deploy.BucketDeployment(this, 'deploy-single-page-application', {
       sources: [s3deploy.Source.asset('./spa')],
       destinationBucket: spa_bucket
-      //destinationKeyPrefix: 'spa' // optional prefix in destination bucket
     });
-    
-    //// Creates a distribution for a S3 bucket.
-    //const myBucket = new s3.Bucket(this, 'myBucket');
       
    s3BucketDeployment.attachInlinePolicy(new Policy(this, "bachelorarbeit-frontend-s3-role-policy", {
       policyName: "bachelorarbeit-frontend-s3-role",
@@ -72,15 +68,13 @@ export class FrontendStack extends cdk.Stack {
         })
       ]
     }));
-//
+    
     spa_bucket.addToResourcePolicy(new iam.PolicyStatement({
       effect: iam.Effect.ALLOW,
       actions: ['s3:*'],
       resources: [spa_bucket.bucketArn],
       principals: [s3BucketDeployment]
     }));
-    
-    //spa_bucket.grantReadWrite(oia);
     
     //CREATE CLOUDFRONT
     const distribution = new CloudFrontWebDistribution(this, 'bachelorarbeit-spa-cf-distribution', {
@@ -97,8 +91,7 @@ export class FrontendStack extends cdk.Stack {
           ]
         }
       ],
-      
-      //comment: "Bachelorarbeit - Cloudfront Distribution of Single Page Application",
+      comment: "Bachelorarbeit - Cloudfront Distribution of Single Page Application",
     });
     this.spa_bucket_arn = spa_bucket.bucketArn;
   }
