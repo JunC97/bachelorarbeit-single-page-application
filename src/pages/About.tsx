@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 interface AboutProps {
-    //title?: string
-    // subtitle?: string;
     apiUrl: string;
 }
 
@@ -27,7 +25,6 @@ class About extends Component<AboutProps> {
     }
 
     render() {
-        //const { title, subtitle, children } = this.props;
         return (
             <>
                 <div className={'flex-container-row'}>
