@@ -13,7 +13,7 @@ const frontendStack = new FrontendStack(app, 'FrontendStack',{
 });
 
 const databaseStack = new DatabaseStack(app, 'DatabaseStack', {
-    stackName: "bachelorarbeit-database-stack2",
+    stackName: "bachelorarbeit-database-stack",
 });
 
 const utilsStack = new UtilsStack(app, 'UtilsStack', {
