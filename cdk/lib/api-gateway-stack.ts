@@ -69,10 +69,6 @@ export class ApiGatewayStack extends cdk.Stack {
     ###############
     */
     create_title.addMethod('POST', new LambdaIntegration(lambda.Function.fromFunctionArn(this, 'create_title', functionArn)), {
-      //authorizationType: AuthorizationType.CUSTOM,
-      //authorizer: authorizer,
-      //operationName: 'UpdateItem',
-      //requestValidator: requestValidator,
       requestParameters: {
         'method.request.path.itemId': true
       },
