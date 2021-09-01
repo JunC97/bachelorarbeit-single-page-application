@@ -7,7 +7,6 @@ interface FooterBarProps {
 
 class FooterBar extends Component<FooterBarProps> {
     render() {
-        //const { title, subtitle, children } = this.props;
         return (
             <>
                 <nav className={'footer'}>
