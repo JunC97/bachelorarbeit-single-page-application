@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 
 interface NotesProps {
     apiUrl: string
-    // title?: string;
-    // content?: string;
-    // date?: string;
-    // author?: string;
 }
 
 class Notes extends Component<NotesProps> {
@@ -35,7 +31,6 @@ class Notes extends Component<NotesProps> {
 
 
     render() {
-        //const { title, subtitle, children } = this.props;
         const reloadNotes = async () => {
             const url = this.props.apiUrl + "/notes/find";
             const response = await fetch(url);
@@ -64,12 +59,7 @@ class Notes extends Component<NotesProps> {
         const createNote = async () => {
             const url = this.props.apiUrl + "/notes/create?title=Test123&notes=Lorem Ipsum 234876129";
             const response = await fetch(url);
-            //const data = await response.json();
-            //update person in state + set loading to false to show data
-            //this.setState({title: data.notes[0].title, notes: data.notes[0].notes, date: data.notes[0].date, loading: false})
-            //console.log(data.notes[0].id)
         }
-        // @ts-ignore
         return (
             <>
                 <div className={'center3'}>
